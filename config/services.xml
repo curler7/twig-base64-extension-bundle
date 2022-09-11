@@ -18,7 +18,7 @@
         />
 
         <service id="curler7_twig_base_64_extension.twig.base_64_image_extension"
-                 class="%curler7_twig_base_64_extension.twig.Base64ImageExtension.class%"
+                 class="%curler7_twig_base_64_extension.twig.base_64_image_extension.class%"
                  public="false"
         >
             <argument type="service" id="curler7_twig_base_64_extension.converter.image_to_base_64_converter" />
