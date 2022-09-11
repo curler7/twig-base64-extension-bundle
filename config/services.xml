@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+       https://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <service id="curler7_twig_base_64_extension.converter.image_to_base_64_converter"
+                 class="%curler7_twig_base_64_extension.converter.image_to_base_64_converter.class%"
+                 public="false"
+        >
+            <argument type="service" id="serializer.normalizer.data_uri" />
+        </service>
+        <service
+                id="Curler7\TwigBase64ExtensionBundle\Converter\ConverterInterface"
+                alias="curler7_twig_base_64_extension.converter.image_to_base_64_converter"
+        />
+
+        <service id="curler7_twig_base_64_extension.twig.base_64_image_extension"
+                 class="%curler7_twig_base_64_extension.twig.Base64ImageExtension.class%"
+                 public="false"
+        >
+            <argument type="service" id="curler7_twig_base_64_extension.converter.image_to_base_64_converter" />
+            <tag name="twig.extension"/>
+        </service>
+        <service
+                id="Curler7\TwigBase64ExtensionBundle\Twig\Base64ImageExtension"
+                alias="curler7_twig_base_64_extension.twig.base_64_image_extension"
+        />
+
+    </services>
+</container>
