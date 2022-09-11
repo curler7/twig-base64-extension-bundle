@@ -1,0 +1,44 @@
+{
+  "name": "curler7/twig-base64-extension-bundle",
+  "description": "Convert images to base64 by twig filter",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gunnar Suwe",
+      "email": "suwe@smart-media.design"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.0",
+    "symfony/serializer": ">=5.3",
+    "symfony/framework-bundle": ">=5.3",
+    "twig/twig": ">=3.3"
+  },
+  "require-dev": {
+    "phpspec/prophecy-phpunit": "^2.0",
+    "phpunit/phpunit": "^9.5.24"
+  },
+  "autoload": {
+    "psr-4": {
+      "Curler7\\TwigBase64ExtensionBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Curler7\\TwigBase64ExtensionBundle\\Tests\\": "tests"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": false,
+      "require": "5.3.*",
+      "docker": true
+    }
+  }
+}
