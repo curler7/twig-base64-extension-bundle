@@ -9,7 +9,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * @author Gunnar Suwe <suwe@smart-media.design>
  */
-class Curler7TwigBase64ExtensionBundle extends Bundle
-{
-
-}
+class Curler7TwigBase64ExtensionBundle extends Bundle {}

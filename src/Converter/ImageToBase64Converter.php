@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Curler7\TwigBase64ExtensionBundle\Converter;
 
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
-use Symfony\Component\Serializer\Normalizer\DataUriNormalizer;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 /**
  * @author Gunnar Suwe <suwe@smart-media.design>
@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Normalizer\DataUriNormalizer;
 class ImageToBase64Converter implements ConverterInterface
 {
     public function __construct(
-        protected DataUriNormalizer $dataUriNormalizer
+        protected NormalizerInterface $dataUriNormalizer
     ) {}
 
     /**
@@ -21,6 +21,6 @@ class ImageToBase64Converter implements ConverterInterface
      */
     public function convert(string $path): string
     {
-        return (string) $this->dataUriNormalizer->normalize(new \SplFileObject($path));
+        return $this->dataUriNormalizer->normalize(new \SplFileObject($path));
     }
 }
